@@ -13,4 +13,5 @@ ENV YARN_CONF_DIR $HADOOP_PREFIX/etc/hadoop
 ENV SPARK_JAR hdfs:///spark/spark-assembly-1.2.0-hadoop2.4.0.jar
 ENV PATH $PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
 
-CMD ["/etc/bootstrap.sh", "-d"]
+ENV SPARK_MASTER_IP master
+CMD /etc/bootstrap.sh && tail -f /dev/null
