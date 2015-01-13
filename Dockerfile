@@ -14,4 +14,5 @@ ENV SPARK_JAR hdfs:///spark/spark-assembly-1.2.0-hadoop2.4.0.jar
 ENV PATH $PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
 
 ENV SPARK_MASTER_IP master
+ADD log4j.properties /usr/local/spark/conf/log4j.properties
 CMD /etc/bootstrap.sh && tail -f /dev/null
